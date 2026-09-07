@@ -1,0 +1,19 @@
+[application]
+name = "Sales MCP Assistant"
+
+[database]
+path = "data/sales.db"
+
+[mcp]
+host = "127.0.0.1"
+port = 8001
+url = "http://127.0.0.1:8001/mcp"
+
+[api]
+host = "127.0.0.1"
+port = 8000
+url = "http://127.0.0.1:8000"
+
+[agent]
+model = "gpt-5-mini"
+temperature = 0

@@ -1,0 +1,12 @@
+[agent]
+model = "gpt-5.6"
+max_iterations = 6
+[aws]
+region = "us-east-1"
+[s3]
+bucket = "bmwinvbucket"
+inventory_key = "inventory/inventory.csv"
+[backend]
+base_url = "http://127.0.0.1:8000"
+[procurement]
+urgent_max_delivery_days = 2

@@ -1,0 +1,26 @@
+{
+
+    "BMW1001": {
+        "vehicle_id": "BMW1001",
+        "model": "BMW iX",
+        "battery": 12,
+        "temperature": 92,
+        "fault_code": "P0A80"
+    },
+
+    "BMW1002": {
+        "vehicle_id": "BMW1002",
+        "model": "BMW i4",
+        "battery": 75,
+        "temperature": 42,
+        "fault_code": "NONE"
+    },
+
+    "BMW1003": {
+        "vehicle_id": "BMW1003",
+        "model": "BMW i7",
+        "battery": 25,
+        "temperature": 65,
+        "fault_code": "NONE"
+    }
+}
