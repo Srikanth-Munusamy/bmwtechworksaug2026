@@ -1,0 +1,21 @@
+Try these questions in Streamlit after indexing your PDF/DOCX files:
+
+What is the standard vehicle warranty period?
+What does the battery warranty cover?
+What are the exclusions in the warranty policy?
+Is accidental damage covered?
+What maintenance schedule is recommended?
+What should I do if the charging warning appears?
+What does fault code P0A80 mean?
+What is the recommended tyre pressure?
+When should the vehicle be taken for service?
+What are the steps to resolve an AC cooling issue?
+Summarize the important points in the service bulletin.
+Which document discusses battery replacement?
+What safety precautions are listed for high-voltage systems?
+Compare standard warranty and extended warranty coverage.
+Which page contains information about charging problems?
+
+Ask only questions whose answers exist in the uploaded documents. If not, Nova should return:
+
+I could not find that information in the indexed documents.
