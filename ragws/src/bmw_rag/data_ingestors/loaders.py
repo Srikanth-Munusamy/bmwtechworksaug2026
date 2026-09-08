@@ -3,6 +3,7 @@ from pathlib import Path
 from langchain_community.document_loaders import Docx2txtLoader, PyPDFLoader
 from langchain_core.documents import Document
 
+#if path has already documents remove them from the list 
 
 def load_document(path: Path) -> list[Document]:
     if path.suffix.lower() == ".pdf":
@@ -15,6 +16,8 @@ def load_document(path: Path) -> list[Document]:
 
 
 def load_documents(directory: Path) -> tuple[list[Document], int]:
+    
+   
     paths = [
         path for path in directory.rglob("*")
         if path.suffix.lower() in (".pdf", ".docx")
