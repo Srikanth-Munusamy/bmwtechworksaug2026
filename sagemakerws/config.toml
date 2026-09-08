@@ -1,0 +1,23 @@
+[aws]
+region = "us-east-1"
+bucket = "bmw-sagemaker-parts-2026"
+execution_role_arn = "arn:aws:iam::622997067231:role/service-role/AmazonSageMakerAdminIAMExecutionRole"
+
+[s3]
+training_prefix = "input/train"
+testing_prefix = "input/test"
+model_prefix = "output/models"
+
+[training]
+instance_type = "ml.m5.large"
+instance_count = 1
+framework_version = "1.7-1"
+python_version = "py3"
+
+[endpoint]
+name = "bmw-parts-demand-endpoint"
+instance_type = "ml.m5.large"
+
+[api]
+host = "127.0.0.1"
+port = 8000

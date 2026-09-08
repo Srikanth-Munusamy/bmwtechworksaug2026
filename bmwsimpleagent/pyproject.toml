@@ -20,7 +20,8 @@ dependencies = [
     "psycopg[binary]",
     "python-dotenv",
     "langchain",
-    "langchain-openai"
+    "langchain-openai",
+    "langchain-google-genai"
  
 ]
 

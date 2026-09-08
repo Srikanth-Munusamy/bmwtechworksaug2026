@@ -1,0 +1,13 @@
+pyproject.toml
+src/bmw_parts_demand.egg-info/PKG-INFO
+src/bmw_parts_demand.egg-info/SOURCES.txt
+src/bmw_parts_demand.egg-info/dependency_links.txt
+src/bmw_parts_demand.egg-info/requires.txt
+src/bmw_parts_demand.egg-info/top_level.txt
+src/sagemakermodule/__init__.py
+src/sagemakermodule/api.py
+src/sagemakermodule/app.py
+src/sagemakermodule/deploy.py
+src/sagemakermodule/generate_data.py
+src/sagemakermodule/predict.py
+src/sagemakermodule/traindata.py

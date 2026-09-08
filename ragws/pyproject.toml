@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bmw-rag-api"
+version = "1.0.0"
+description = "RAG hands-on lab using FastAPI, Streamlit, PDF, DOCX, OpenAI and ChromaDB"
+requires-python = ">=3.11,<3.14"
+
+dependencies = [
+    "chromadb>=1.0.0",
+    "fastapi>=0.115.0",
+    "langchain-chroma>=0.2.0",
+    "langchain-core>=0.3.0",
+    "langchain-aws>=0.3.0",
+    "langchain-text-splitters>=0.3.0",
+    "pydantic-settings>=2.7.0",
+    "pypdf>=5.0.0",
+    "python-docx>=1.1.2",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.0",
+    "streamlit>=1.41.0",
+    "uvicorn[standard]>=0.34.0",
+    "boto3>=1.26.0",
+    "boto3>=1.35,<2", 
+    "langchain-community>=0.3,<2",
+    "docx2txt"
+    
+
+
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx>=0.28.0",
+    "pytest>=8.3.0",
+    "ruff>=0.9.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bmw_rag"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: bmw-parts-demand
+Version: 1.0.0
+Summary: BMW spare-parts demand prediction using Amazon SageMaker
+Requires-Python: <3.14,>=3.11
+Requires-Dist: boto3>=1.40
+Requires-Dist: sagemaker<3,>=2.250
+Requires-Dist: pandas>=2.2
+Requires-Dist: numpy>=2.0
+Requires-Dist: scikit-learn>=1.5
+Requires-Dist: xgboost>=2.1
+Requires-Dist: fastapi>=0.115
+Requires-Dist: uvicorn[standard]>=0.34
+Requires-Dist: streamlit>=1.40
+Requires-Dist: requests>=2.32
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: joblib

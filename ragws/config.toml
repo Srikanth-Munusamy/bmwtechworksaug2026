@@ -1,0 +1,27 @@
+[documents]
+directory = "documents"
+allowed_extensions = [".pdf", ".docx"]
+
+[vector_database]
+directory = "src/bmw_rag/vectordatabase"
+collection_name = "bmw_knowledge_base"
+
+[chunking]
+chunk_size = 800
+chunk_overlap = 150
+
+[retrieval]
+number_of_chunks = 4
+
+[models]
+embedding_model = "amazon.titan-embed-text-v2:0"
+chat_model = "global.amazon.nova-2-lite-v1:0"
+temperature = 0.0
+
+[aws]
+region = "us-east-1"
+
+[api]
+host = "127.0.0.1"
+port = 8000
+base_url = "http://127.0.0.1:8000"
