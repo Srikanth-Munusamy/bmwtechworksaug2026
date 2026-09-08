@@ -20,9 +20,9 @@ def health():
 
 
 @app.post("/ingest")
-def ingest():
+def ingest(client: str):
     try:
-        return reindex_documents()
+        return reindex_documents(client)
     except Exception as error:
         raise HTTPException(
             status_code=500,
@@ -31,9 +31,9 @@ def ingest():
 
 
 @app.post("/ask")
-def ask(request: QuestionRequest):
+def ask(client: str, request: QuestionRequest):
     try:
-        return answer_question(request.question)
+        return answer_question(client, request.question)
     except Exception as error:
         raise HTTPException(
             status_code=500,

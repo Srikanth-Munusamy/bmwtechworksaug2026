@@ -3,8 +3,8 @@ directory = "documents"
 allowed_extensions = [".pdf", ".docx"]
 
 [vector_database]
-directory = "src/bmw_rag/vectordatabase"
-collection_name = "bmw_knowledge_base"
+directory = "chroma_db"
+collection_name = "knowledge_base"
 
 [chunking]
 chunk_size = 800

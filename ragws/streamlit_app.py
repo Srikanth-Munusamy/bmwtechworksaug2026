@@ -126,8 +126,10 @@ if st.button("Ask Question"):
         try:
             response = requests.post(
                 f"{settings.api_base_url}/ask",
-                json={
+                params={
                     "client": client,
+                },
+                json={
                     "question": question,
                 },
                 timeout=300,

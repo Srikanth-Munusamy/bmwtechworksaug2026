@@ -18,8 +18,8 @@ Do not invent facts.
 """
 
 
-def answer_question(question: str) -> dict:
-    documents = retrieve(question)
+def answer_question(client:str,question: str) -> dict:
+    documents = retrieve(client, question)
 
     if not documents:
         return {
