@@ -1,7 +1,7 @@
-import BMWBanner from '../../assets/bmw-3-series-gran-limousine.jpg'
+import BMWBanner from '../../assets/luxury-car-banner-design.jpg'
 const Banner = () => {
     return (
-      <img src={BMWBanner} alt="Banner" style={{ width: '70%', height: '100%' }}/>
+      <img src={BMWBanner} alt="Banner" className='w-full h-auto'/>
     )
 }
 
