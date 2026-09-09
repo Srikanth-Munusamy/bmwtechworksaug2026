@@ -9,5 +9,6 @@ src/sagemakermodule/config.py
 src/sagemakermodule/deploy.py
 src/sagemakermodule/inference.py
 src/sagemakermodule/package_model.py
+src/sagemakermodule/predict.py
 src/sagemakermodule/train.py
 src/sagemakermodule/upload_model.py
