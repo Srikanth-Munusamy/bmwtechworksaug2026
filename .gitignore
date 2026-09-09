@@ -1,5 +1,6 @@
 .env
 venv
+sagemakerenv
 partsenv
 vehicleenv
 node_modules

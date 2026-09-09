@@ -1,0 +1,9 @@
+{
+  "model_version": "v1",
+  "algorithm": "RandomForestRegressor",
+  "mae": 4.65,
+  "rmse": 5.17,
+  "r2_score": 0.9744,
+  "training_rows": 40,
+  "test_rows": 10
+}

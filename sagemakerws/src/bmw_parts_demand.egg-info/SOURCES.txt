@@ -5,9 +5,9 @@ src/bmw_parts_demand.egg-info/dependency_links.txt
 src/bmw_parts_demand.egg-info/requires.txt
 src/bmw_parts_demand.egg-info/top_level.txt
 src/sagemakermodule/__init__.py
-src/sagemakermodule/api.py
-src/sagemakermodule/app.py
+src/sagemakermodule/config.py
 src/sagemakermodule/deploy.py
-src/sagemakermodule/generate_data.py
-src/sagemakermodule/predict.py
-src/sagemakermodule/traindata.py
+src/sagemakermodule/inference.py
+src/sagemakermodule/package_model.py
+src/sagemakermodule/train.py
+src/sagemakermodule/upload_model.py

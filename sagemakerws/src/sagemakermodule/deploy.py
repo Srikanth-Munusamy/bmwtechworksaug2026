@@ -1,42 +1,52 @@
-from pathlib import Path
+import boto3
+import sagemaker
 
-import joblib
+from sagemaker.sklearn.model import SKLearnModel
 
-
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
-MODEL_FILE = (
-    PROJECT_ROOT
-    / "models"
-    / "parts_demand_model.joblib"
+from sagemakermodule.config import (
+    AWS_REGION,
+    ENDPOINT_NAME,
+    S3_BUCKET,
+    SAGEMAKER_ROLE_ARN,
 )
 
 
-def deploy_model() -> None:
-    """
-    Local deployment means loading the trained model.
-    FastAPI will use this same model file for predictions.
-    """
+def main():
+    boto_session = boto3.Session(
+        region_name=AWS_REGION,
+    )
 
-    if not MODEL_FILE.exists():
-        raise FileNotFoundError(
-            f"Local model file not found:\n{MODEL_FILE}\n\n"
-            "First run:\n"
-            "python -m sagemakermodule.train_local"
-        )
+    sagemaker_session = sagemaker.Session(
+        boto_session=boto_session,
+    )
 
-    saved_model = joblib.load(MODEL_FILE)
+    model_data = (
+        f"s3://{S3_BUCKET}/"
+        "models/parts-demand/v1/"
+        "model.tar.gz"
+    )
 
-    model = saved_model["model"]
-    feature_columns = saved_model["feature_columns"]
+    model = SKLearnModel(
+        model_data=model_data,
+        role=SAGEMAKER_ROLE_ARN,
+        entry_point="inference.py",
+        source_dir="src/sagemakermodule",
+        framework_version="1.2-1",
+        py_version="py3",
+        sagemaker_session=sagemaker_session,
+    )
 
-    print("Local model loaded successfully.")
-    print(f"Model type: {type(model).__name__}")
-    print(f"Model path: {MODEL_FILE}")
-    print(f"Features: {feature_columns}")
-    print("\nStart FastAPI to serve predictions:")
-    print("uvicorn sagemakermodule.api:app --reload --port 8000")
+    predictor = model.deploy(
+        initial_instance_count=1,
+        instance_type="ml.c4.large",
+        endpoint_name=ENDPOINT_NAME,
+    )
+
+    print(
+        f"Endpoint deployed: "
+        f"{predictor.endpoint_name}"
+    )
 
 
 if __name__ == "__main__":
-    deploy_model()
+    main()
